@@ -1,12 +1,12 @@
 {
-  "name": "racoder",
-  "description": "Transcode internet radio streams to MP3 streams",
-  "main": "./src/server.js",
-  "scripts": {
-    "start": "docker compose up",
-    "build": "docker compose build",
-    "deploy": "fly deploy"
-  },
-  "license": "MIT",
-  "type": "module"
+    "name": "racoder",
+    "description": "Transcode internet radio streams to MP3 streams",
+    "main": "./src/server.js",
+    "scripts": {
+        "start": "docker compose up",
+        "build": "docker compose build",
+        "test": "node src/server.js"
+    },
+    "license": "MIT",
+    "type": "module"
 }
