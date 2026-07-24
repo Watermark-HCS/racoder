@@ -19,8 +19,9 @@ Racoder is a lightweight Node.js web server that leverages [FFmpeg](https://ffmp
   - Racoder runs inside a container with 256 MB of RAM and consumes very little CPU
 - Minimize traffic volume
   - Racoder will only pull from an upstream source during the time a stream is requested
+  - Concurrent clients requesting the same stream share a single FFmpeg instance and upstream connection, so upstream bandwidth stays constant no matter how many listeners are connected
 - Aimed at small (private) deployments
-  - Each request spawns a separate instance of FFmpeg which consumes additional memory (approx. 20 MB of RAM per active stream) and network bandwidth
+  - Each active stream spawns one instance of FFmpeg which consumes additional memory (approx. 20 MB of RAM per active stream) and network bandwidth; the instance is stopped once the last client disconnects
 
 ## Configuration options
 
